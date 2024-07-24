@@ -14,7 +14,7 @@ public class TransactionDto {
       private TransactionType transactionType;
 
       @DecimalMin(value = "0.0", inclusive = false)
-      @Digits(integer=5, fraction=2)
+      @Digits(integer = 5, fraction = 2)
       private BigDecimal amount;
 
       private CurrencyType currencyType;

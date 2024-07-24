@@ -8,7 +8,6 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -52,8 +51,8 @@ public class UserController {
                   responseCode = "500", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ServiceRuntimeException.class))
             )
       })
-      public ResponseEntity<List<AccountDto>> getUserAccounts(@PathVariable @Min(0)Long user_id) {
+      public ResponseEntity<List<AccountDto>> getUserAccounts(@PathVariable @Min(0) Long user_id) {
             List<AccountDto> allUserAccounts = userService.findAllUserAccountsById(user_id);
             return ResponseEntity.ok(allUserAccounts);
-      };
+      }
 }

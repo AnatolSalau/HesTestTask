@@ -16,7 +16,7 @@ public class AccountDto {
       @NotNull
       private Long userId;
 
-      @Digits(integer=5, fraction=2)
+      @Digits(integer = 5, fraction = 2)
       private BigDecimal balance;
       private Boolean isBlocked;
       private CurrencyType currencyType;

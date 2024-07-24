@@ -2,7 +2,6 @@ package com.example.hestesttask.dto;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
@@ -16,6 +15,6 @@ public class TransactionUserDto {
       private Long accountId;
 
       @DecimalMin(value = "0.0", inclusive = false)
-      @Digits(integer=5, fraction=2)
+      @Digits(integer = 5, fraction = 2)
       private BigDecimal amount;
 }

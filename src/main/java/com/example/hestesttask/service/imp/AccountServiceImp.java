@@ -61,7 +61,7 @@ public class AccountServiceImp implements AccountService {
       private Account getAccountByIdOrThrow(Long accountId) {
             Optional<Account> optional = repository.findById(accountId);
             return optional.orElseThrow(
-                  () -> new ServiceRuntimeException(404, "User with id : " + accountId + " not found" )
+                  () -> new ServiceRuntimeException(404, "User with id : " + accountId + " not found")
             );
       }
 }

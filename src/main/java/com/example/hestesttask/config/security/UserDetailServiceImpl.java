@@ -18,13 +18,11 @@ public class UserDetailServiceImpl implements UserDetailsService {
             this.repository = repository;
       }
 
-
       @Override
       public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
             User user = repository.findUserByName(username).orElseThrow(
                   () -> new UsernameNotFoundException(username)
             );
-
             UserDetails userDetails = new UserDetailsImpl(
                   user.getName(), user.getPassword(), user.getRoleType().name()
             );

@@ -32,7 +32,7 @@ public class SecurityConfig {
                   })
                   .httpBasic(Customizer.withDefaults())
                   .exceptionHandling(
-                        exception-> exception.authenticationEntryPoint(authEntryPoint)
+                        exception -> exception.authenticationEntryPoint(authEntryPoint)
                   );
             return http.build();
       }

@@ -8,7 +8,6 @@ import com.example.hestesttask.entity.enums.TransactionType;
 import com.example.hestesttask.exception.ServiceRuntimeException;
 import com.example.hestesttask.repository.UserRepository;
 import com.example.hestesttask.service.UserService;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +37,7 @@ public class UserServiceImp implements UserService {
 
       @Override
       @Size(min = 1)
-      public List<AccountDto> findAllUserAccountsById( Long userId) {
+      public List<AccountDto> findAllUserAccountsById(Long userId) {
             User user = getUserByIdOrThrow(userId);
             return user.getAccounts().stream()
                   .map(account -> mapper.map(account, AccountDto.class))

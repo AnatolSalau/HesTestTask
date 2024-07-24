@@ -11,13 +11,13 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @RestControllerAdvice
 public class SecurityExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler({ AuthenticationException.class })
-    public ResponseEntity<ServiceErrorDto> handleUserRuntimeException(Exception ex) {
-        return ResponseEntity
-              .status(HttpStatus.UNAUTHORIZED)
-              .body(new ServiceErrorDto(HttpStatus.UNAUTHORIZED.value() ,
-                          ex.getMessage()
-                    )
-              );
-    }
+      @ExceptionHandler({AuthenticationException.class})
+      public ResponseEntity<ServiceErrorDto> handleUserRuntimeException(Exception ex) {
+            return ResponseEntity
+                  .status(HttpStatus.UNAUTHORIZED)
+                  .body(new ServiceErrorDto(HttpStatus.UNAUTHORIZED.value(),
+                              ex.getMessage()
+                        )
+                  );
+      }
 }

@@ -12,13 +12,12 @@ import org.springframework.web.servlet.HandlerExceptionResolver;
 @Component
 public class ServiceAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
-    @Autowired
-    @Qualifier("handlerExceptionResolver")
-    private  HandlerExceptionResolver resolver;
+      @Autowired
+      @Qualifier("handlerExceptionResolver")
+      private HandlerExceptionResolver resolver;
 
-
-    @Override
-    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) {
-        resolver.resolveException(request, response, null, authException);
-    }
+      @Override
+      public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) {
+            resolver.resolveException(request, response, null, authException);
+      }
 }

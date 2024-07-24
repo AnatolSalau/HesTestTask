@@ -56,7 +56,7 @@ public class AccountController {
                   responseCode = "500", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ServiceRuntimeException.class))
             )
       })
-      public ResponseEntity<List<AccountDto>>getAllAccounts() {
+      public ResponseEntity<List<AccountDto>> getAllAccounts() {
             List<AccountDto> allAccounts = accountService.findAllAccounts();
             return ResponseEntity.ok(allAccounts);
       }
