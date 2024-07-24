@@ -62,11 +62,22 @@ Owner
 
         http://127.0.0.1:8080/api/v1/account/deposit
         PUT, ROLE User, /api/v1/account/deposit
+
+        {
+            "userId" : 3,
+            "accountId" : 1,
+            "amount": 300.00
+        }
 6. Снять счет
 
         http://127.0.0.1:8080/api/v1/account/withdraw
         PUT, ROLE User, /api/v1/account/withdraw
 
+        {
+            "userId" : 3,
+            "accountId" : 1,
+            "amount": 300.00
+        }
 Actuator
 
         http://127.0.0.1:8080/actuator/health
@@ -85,7 +96,9 @@ Swagger
 
    Три таблицы users, accounts, transactions 
 
-   Тип валюты, вид транзакции, роль вынесены в отдельные типы currencytype,transactiontype, roletype
+   Тип валюты, вид транзакции, роль вынесены в отдельные типы: 
+   
+   currencytype, transactiontype, roletype
 
 ### 3. Security
    Аутентификация реализована через Basic http authentication
